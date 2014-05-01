@@ -4,48 +4,46 @@
 <head>
     <meta charset="utf-8" />
     <title>svg</title>
+    <style>
+    body {
+        background:#f9f9f9;
+    }
+    svg { margin:10px 10px 0 0;}
+    </style>
 </head>
 
 <body>
-    <div class="box">
-        <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:1;
-stroke:rgb(0,0,0)" />
-        </svg>
-    </div>
-    <div class="box">
-        <svg width="300" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="150" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
-        </svg>
-    </div>
-    <div class="box">
-        <svg width="300" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="150" cy="50" rx="100" ry="40" style="fill:rgb(2000,100,50);stroke:rgb(0,0,100);stroke-width:2"></ellipse>
-        </svg>
-    </div>
-    <div class="box">
-        <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:1;
+    stroke:rgb(0,0,0)" />
+    </svg>
+    <svg width="300" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
+    </svg>
+    <svg width="300" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="150" cy="50" rx="100" ry="40" style="fill:rgb(2000,100,50);stroke:rgb(0,0,100);stroke-width:2"></ellipse>
+    </svg>
+    <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
 
-            <line x1="0" y1="0" x2="150" y2="100" style="stroke:rgb(99,99,99);stroke-width:2" />
-            <line x1="300" y1="0" x2="150" y2="100" style="stroke:rgb(99,99,99);stroke-width:2" />
+        <line x1="0" y1="0" x2="150" y2="100" style="stroke:rgb(99,99,99);stroke-width:2" />
+        <line x1="300" y1="0" x2="150" y2="100" style="stroke:rgb(99,99,99);stroke-width:2" />
 
-        </svg>
-
-    </div>
-    <div class="box">
-        <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-
-            <polygon points="0,0 150,100 300,0" style="fill:#cccccc;
+    </svg>
+    <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="50,0 150,100 250,0" style="fill:#cccccc;" />
+    </svg>
+    <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,0 100,100 200,100 300,0" style="fill:#cccccc;
         stroke:#000000;stroke-width:1" />
+    </svg>
+    <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
 
-        </svg>
-        <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="0,0 0,20 300,20 300,40 0,80 0,100 300,100" style="fill:#f9f9f9;stroke:red;stroke-width:2" />
 
-            <polygon points="0,0 100,100 200,100 300,0" style="fill:#cccccc;
-        stroke:#000000;stroke-width:1" />
-
-        </svg>
-    </div>
+    </svg>
+    <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M200 0 L100 100 L300 100 Z" />
+    </svg>
 </body>
 
 </html>
