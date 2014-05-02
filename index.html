@@ -7,12 +7,25 @@
     <style>
     body {
         background:#f9f9f9;
+        padding:20px;
     }
-    svg { margin:10px 10px 0 0;}
+    svg {
+        margin:10px 10px 0 0;
+    }
     </style>
 </head>
 
 <body>
+    <h2>SVG 形状</h2>
+    <ul>
+        <li>矩形 &lt;rect&gt;</li>
+        <li>圆形 &lt;circle&gt;</li>
+        <li>椭圆 &lt;ellipse&gt;</li>
+        <li>线 &lt;line&gt;</li>
+        <li>折线 &lt;polyline&gt;</li>
+        <li>多边形 &lt;polygon&gt;</li>
+        <li>路径 &lt;path&gt;</li>
+    </ul>
     <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:1;
     stroke:rgb(0,0,0)" />
@@ -42,8 +55,223 @@
 
     </svg>
     <svg width="300" height="120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <path d="M200 0 L100 100 L300 100 Z" />
+        <path d="M150 0 L100 100 L200 100 Z" style="fill:#ff9c01" />
     </svg>
+    <h2>Path Commands</h2>
+    <p>
+        下面是一些命令 for the SVG
+        <code>path</code>element. 每一个命令都是由一个字母和一些数字组成 (coordinates etc.) Uppercase commands usually interpret coordinate parameters as absolute coordinates. Lowercase commands usually interpret coordinate parameters as being relative from current pen location.
+    </p>
+
+    <table style="border:1px solid #aaaaaa;" cellpadding="5" cellspacing="0">
+        <tbody>
+            <tr>
+                <td style="border-bottom:1px solid #aaaaaa;"><b>Com.</b>
+                </td>
+                <td style="border-bottom:1px solid #aaaaaa; width:13%"><b>参数</b>
+                </td>
+                <td style="border-bottom:1px solid #aaaaaa; width:13%"><b>Name</b>
+                </td>
+                <td style="border-bottom:1px solid #aaaaaa;">描述</b>
+                </td>
+            </tr>
+
+            <tr>
+                <td valign="top">M</td>
+                <td valign="top">x,y</td>
+                <td valign="top">moveto</td>
+                <td valign="top">Moves pen to 指定的 point x,y without drawing.</td>
+            </tr>
+            <tr>
+                <td valign="top">m</td>
+                <td valign="top">x,y</td>
+                <td valign="top">moveto</td>
+                <td valign="top">Moves pen to 指定的 point x,y relative to current pen location, without drawing.</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">L</td>
+                <td valign="top">x,y</td>
+                <td valign="top">lineto</td>
+                <td valign="top">Draws a line from current pen location to 指定的 point x,y .</td>
+            </tr>
+            <tr>
+                <td valign="top">l</td>
+                <td valign="top">x,y</td>
+                <td valign="top">lineto</td>
+                <td>Draws a line from current pen location to 指定的 point x,y relative to current pen location.</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">H</td>
+                <td valign="top">x</td>
+                <td valign="top">horizontal lineto</td>
+                <td>Draws a horizontal line to the point defined by
+                    <br>(指定的 x, pens current y).</td>
+            </tr>
+            <tr>
+                <td>h</td>
+                <td valign="top">x</td>
+                <td>horizontal lineto</td>
+                <td>Draws a horizontal line to the point defined by
+                    <br>(pens current x + 指定的 x, pens current y). The x is relative to the current pens x position.
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">V</td>
+                <td valign="top">y</td>
+                <td valign="top">vertical lineto</td>
+                <td valign="top">Draws a vertical line to the point defined by
+                    <br>(pens current x, 指定的 y).</td>
+            </tr>
+            <tr>
+                <td valign="top">v</td>
+                <td valign="top">y</td>
+                <td valign="top">vertical lineto</td>
+                <td valign="top">Draws a vertical line to the point defined by
+                    <br>(pens current x, pens current y + 指定的 y). The y is relative to the pens current y-position.
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">C</td>
+                <td valign="top">x1,y1 x2,y2 x,y</td>
+                <td valign="top">curveto</td>
+                <td valign="top">Draws a cubic Bezier curve from current pen point to x,y. x1,y1 and x2,y2 are start and end control points of the curve, controlling how it bends.
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">c</td>
+                <td valign="top">x1,y1 x2,y2 x,y</td>
+                <td valign="top">curveto</td>
+                <td valign="top">Same as C, but interprets coordinates relative to current pen point.</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">S</td>
+                <td valign="top">x2,y2 x,y</td>
+                <td valign="top">shorthand /
+                    <br>
+                    <nobr>smooth curveto</nobr>
+                </td>
+                <td valign="top">Draws a cubic Bezier curve from current pen point to x,y. x2,y2 is the end control point. The start control point is is assumed to be the same as the end control point of the previous curve.
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">s</td>
+                <td valign="top">x2,y2 x,y</td>
+                <td valign="top">shorthand /
+                    <br>smooth curveto</td>
+                <td valign="top">Same as S, but interprets coordinates relative to current pen point.</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">Q</td>
+                <td valign="top">x1,y1 x,y</td>
+                <td valign="top">quadratic Bezier curveto</td>
+                <td valign="top">Draws a quadratic Bezier curve from current pen point to x,y. x1,y1 is the control point controlling how the curve bends.
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">q</td>
+                <td valign="top">x1,y1 x,y</td>
+                <td valign="top">quadratic Bezier curveto</td>
+                <td valign="top">Same as Q, but interprets coordinates relative to current pen point.</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">T</td>
+                <td valign="top">x,y</td>
+                <td valign="top">shorthand / smooth quadratic Bezier curveto</td>
+                <td valign="top">Draws a quadratic Bezier curve from current pen point to x,y. The control point is assumed to be the same as the last control point used.
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">t</td>
+                <td valign="top">x,y</td>
+                <td valign="top">shorthand / smooth quadratic Bezier curveto</td>
+                <td valign="top">Same as T, but interprets coordinates relative to current pen point.</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">A</td>
+                <td valign="top">rx,ry
+                    <br>x-axis-rotation
+                    <br>large-arc-flag,
+                    <br>sweepflag
+                    <br>x,y</td>
+                <td valign="top">elliptical arc</td>
+                <td valign="top">Draws an elliptical arc from the current point to the point x,y. rx and ry are the elliptical radius in x and y direction.
+                    <br>The x-rotation determines how much the arc is to be rotated around the x-axis. It only seems to have an effect when rx and ry have different values.
+                    <br>The large-arc-flag doesn't seem to be used (can be either 0 or 1). Neither value (0 or 1) changes the arc.
+                    <br>The sweep-flag determines the direction to draw the arc in.
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">a</td>
+                <td valign="top">rx,ry
+                    <br>x-axis-rotation
+                    <br>large-arc-flag,
+                    <br>sweepflag
+                    <br>x,y</td>
+                <td valign="top">elliptical arc</td>
+                <td valign="top">Same as A, but interprets coordinates relative to current pen point.</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">Z</td>
+                <td>&nbsp;</td>
+                <td valign="top">closepath</td>
+                <td valign="top">Closes the path by drawing a line from current point to first point.</td>
+            </tr>
+            <tr>
+                <td valign="top">z</td>
+                <td>&nbsp;</td>
+                <td valign="top">closepath</td>
+                <td valign="top">Closes the path by drawing a line from current point to first point.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <svg width="300" height="160" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 100  C30 0 100 0 100 100  C130 0 200 0 200 100 Z" style="fill:green; fill-opacity:0.5; stroke:#000; stroke-width:2" />
+        <text x='60' y='125' fill='#000'>Hello, World!</text>
+    </svg>
+
+    <svg width="12cm" height="5.25cm" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <path d="M300,200 h-150 a150,150 0 1,0 150,-150 z" fill="red" />
+        <path d="M300,200 v-150 a150,150 0 0,0 -150,150 z" fill="yellow" />
+
+    </svg>
+
 </body>
 
 </html>
